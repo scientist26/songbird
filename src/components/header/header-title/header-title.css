@@ -1,0 +1,14 @@
+.header-title {
+    /* background-image: url(/static/media/logo.4f82cd73.svg); */
+  /* width: 200px;
+  height: 55px;
+  background-size: contain;
+  background-repeat: no-repeat; */
+  margin: 0;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.title-half {
+  color: #00bc8c;
+}

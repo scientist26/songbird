@@ -1,0 +1,6 @@
+.random-bird {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 25px;
+  background-color: #303030;
+}
