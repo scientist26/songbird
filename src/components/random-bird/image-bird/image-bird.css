@@ -1,6 +1,5 @@
 .bird-img {
-  width: 200px;
-  vertical-align: middle;
-  border-style: none;
-  background-color: yellowgreen;
+  width: 120px;
+  /* height: 150px; */
+  border-radius: 5%;
 }

@@ -1,5 +1,38 @@
 .audio-player {
-  width: 900px;
+  display: flex;
   height: 100px;
   background-color: yellow;
+}
+
+
+.audio-container {
+  width: 80%;
+  padding: 0 10px 0 10px;
+}
+
+.bird-name {
+  text-align: center;
+}
+
+.bird-name h3 {
+  font-size: 1.4rem;
+}
+
+.rhap_container {
+  background-color: #303030;
+  box-shadow: none;
+  border-top: 1px solid #555;
+}
+
+.rhap_controls-section {
+  flex: initial;
+}
+
+.rhap_time {
+  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+}
+
+.rhap_progress-filled {
+  background-color: rgb(0, 188, 140);
 }
