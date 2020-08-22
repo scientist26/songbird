@@ -1,0 +1,10 @@
+.bird-content {
+  width: 100%;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.bird-content__instruction p {
+  display: none;
+  padding: 0 20px 0 20px;
+}
