@@ -33,6 +33,7 @@ export default class BirdList extends Component {
   state = {
     stop: false,
   };
+
   render() {
     const {
       page,
@@ -41,6 +42,7 @@ export default class BirdList extends Component {
       onItemSelected,
       isNextPage,
     } = this.props;
+
     const items = renderItems({
       random,
       isCorrectBird,
@@ -48,6 +50,7 @@ export default class BirdList extends Component {
       page,
       isNextPage,
     });
+
     return <ul className="bird-list">{items}</ul>;
   }
 }

@@ -17,6 +17,10 @@
   margin-left: 0;
   line-height: 1.25;
   color: #fff;
-  background-color: #00bc8c;
+  background-color: #13775e;
   border: 0 solid transparent;
+}
+
+.active-nav {
+  background-color: #00bc8c;
 }

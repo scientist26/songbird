@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "../header";
 import RandomBird from "../random-bird";
 import AnswerBird from "../answers";
+import EndGame from "../end-game";
 
 const randomBird = () => {
   return Math.floor(Math.random() * 6);
@@ -18,6 +19,7 @@ export default class App extends Component {
     isSelectedBird: false,
     isCorrectBird: false,
     isNextPage: false,
+    isEndGame: false,
   };
 
   componentDidUpdate() {
@@ -29,8 +31,6 @@ export default class App extends Component {
   }
 
   onBirdSelected = (id) => {
-    console.log(this.state);
-
     this.setState((state) => ({
       id: id - 1,
       isSelectedBird: true,
@@ -39,8 +39,11 @@ export default class App extends Component {
   };
 
   getNextpage = () => {
-    if (this.state.page > 5) {
-      return;
+    if (this.state.page === 5) {
+      this.setState((state) => ({
+        page: state.page - 1,
+        isEndGame: true,
+      }));
     }
     this.setState((state) => ({
       page: state.page + 1,
@@ -48,6 +51,18 @@ export default class App extends Component {
       isSelectedBird: false,
       isCorrectBird: false,
       isNextPage: true,
+    }));
+  };
+
+  restartGame = () => {
+    this.setState((state) => ({
+      page: (state.page = 0),
+      random: randomBird(),
+      id: (state.id = 0),
+      isSelectedBird: false,
+      isCorrectBird: false,
+      isNextPage: false,
+      isEndGame: false,
     }));
   };
 
@@ -59,12 +74,19 @@ export default class App extends Component {
       isSelectedBird,
       isCorrectBird,
       isNextPage,
+      isEndGame,
     } = this.state;
 
     return (
       <div className="App">
-        <Header />
-        <RandomBird page={page} random={random} isCorrectBird={isCorrectBird} />
+        <Header page={page} isEndGame={isEndGame} />
+        <EndGame isEndGame={isEndGame} restartGame={this.restartGame} />
+        <RandomBird
+          page={page}
+          random={random}
+          isCorrectBird={isCorrectBird}
+          isEndGame={isEndGame}
+        />
         <AnswerBird
           page={page}
           random={random}
@@ -72,8 +94,9 @@ export default class App extends Component {
           isSelectedBird={isSelectedBird}
           isCorrectBird={isCorrectBird}
           onItemSelected={this.onBirdSelected}
-          onNextPage={this.getNextpage}
+          getNextpage={this.getNextpage}
           isNextPage={isNextPage}
+          isEndGame={isEndGame}
         />
       </div>
     );

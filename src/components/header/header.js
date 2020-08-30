@@ -6,14 +6,14 @@ import TitleApp from "../header/header-title";
 import ScoreApp from "../header/header-score";
 import Navigation from "../header/header-navigation";
 
-const Header = () => {
+const Header = ({ page }) => {
   return (
     <header className="header">
       <div className="top-panel">
         <TitleApp />
         <ScoreApp />
       </div>
-      <Navigation />
+      <Navigation page={page} />
     </header>
   );
 };

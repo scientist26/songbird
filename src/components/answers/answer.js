@@ -14,17 +14,20 @@ export default class AnswerBird extends Component {
       isSelectedBird,
       isCorrectBird,
       onItemSelected,
-      onNextPage,
+      getNextpage,
       isNextPage,
+      isEndGame,
     } = this.props;
 
-    const nextPage = () => {
+    const onNextPage = () => {
       if (isCorrectBird) {
-        onNextPage();
+        getNextpage();
       }
     };
+    const hiddenBlock = isEndGame ? "bird-answer hidden" : "bird-answer";
+    const activeButton = isCorrectBird ? "btn active" : "btn";
     return (
-      <div className="bird-answer">
+      <div className={hiddenBlock}>
         <div className="bird-option">
           <BirdList
             page={page}
@@ -38,12 +41,11 @@ export default class AnswerBird extends Component {
         <div className="bird-description">
           <DescriptionBird
             page={page}
-            // random={random}
             id={id}
             isSelectedBird={isSelectedBird}
           />
         </div>
-        <button className="btn" onClick={nextPage}>
+        <button className={activeButton} onClick={onNextPage}>
           Next level
         </button>
       </div>

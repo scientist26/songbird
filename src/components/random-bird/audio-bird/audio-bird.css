@@ -53,3 +53,25 @@
 .rhap_button-clear {
   outline: none;
 }
+
+
+.rhap_volume-bar {
+  width: 60px;
+}
+
+@media (max-width: 440px) {
+
+  .rhap_volume-bar {
+    width: 15px;
+  }
+
+  .rhap_download-progress{
+    width: 50px;
+  }
+
+  .rhap_progress-indicator {
+    width: 11px;
+    height: 11px;
+    top: -3px;
+  }
+}

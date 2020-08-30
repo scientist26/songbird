@@ -11,7 +11,6 @@ const BirdItem = ({
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
-    console.log("useEffect()");
     return setSelected(false);
   }, [isNextPage]);
 
@@ -29,11 +28,7 @@ const BirdItem = ({
   };
 
   return (
-    <li
-      className="bird-list-item"
-      // key={id}
-      onClick={onHandleClick}
-    >
+    <li className="bird-list-item" onClick={onHandleClick}>
       <span className={className}></span>
       <span className="bird-list-item-btn">{name}</span>
     </li>

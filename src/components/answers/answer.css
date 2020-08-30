@@ -5,6 +5,10 @@
   margin-bottom: 25px;
 }
 
+.hidden {
+  display: none;
+}
+
 .bird-option {
   width: 47%;
 }
@@ -39,7 +43,13 @@
   border: 1px solid rgb(104, 100, 100);
 }
 
+.active {
+  background-color: #00bc8c;
+}
 
+.active:hover {
+  background-color: #0d7a5f;
+}
 
 @media (max-width: 768px) {
 

@@ -10,10 +10,15 @@ import "../../../random-bird/audio-bird/audio-bird.css";
 export default class ChangeBird extends Component {
   render() {
     const { page, id } = this.props;
+
     return (
       <div className="bird-details-wrapper">
         <div className="bird-details">
-          <img className="bird-img" src={birdsData[page][id].image}></img>
+          <img
+            className="bird-img"
+            src={birdsData[page][id].image}
+            alt={birdsData[page][id].name}
+          ></img>
           <ul className="bird-details__list">
             <li className="bird-details__list-item">
               <h4>{birdsData[page][id].name}</h4>
