@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 
 import "./image-bird.css";
+import birdsData from "../../../data/birdsdata";
 
 export default class BirdImg extends Component {
   render() {
+    const { page, random, isCorrectBird } = this.props;
+    const defaultBird = "img/random-bird.gif";
     return (
-      // <img className="bird-img" src="img/random-bird.gif" alt="bird"></img>
       <img
         className="bird-img"
-        // src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
-        src="img/random-bird.gif"
-        alt="bird"
+        src={isCorrectBird ? birdsData[page][random].image : defaultBird}
+        alt={isCorrectBird ? birdsData[page][random].name : "bird"}
       ></img>
     );
   }

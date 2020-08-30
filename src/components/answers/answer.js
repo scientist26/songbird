@@ -4,19 +4,48 @@ import "./answer.css";
 
 import BirdList from "./bird-list";
 import DescriptionBird from "./description/description";
-import birdsData from "../../data/birdsdata";
 
 export default class AnswerBird extends Component {
   render() {
+    const {
+      page,
+      random,
+      id,
+      isSelectedBird,
+      isCorrectBird,
+      onItemSelected,
+      onNextPage,
+      isNextPage,
+    } = this.props;
+
+    const nextPage = () => {
+      if (isCorrectBird) {
+        onNextPage();
+      }
+    };
     return (
       <div className="bird-answer">
         <div className="bird-option">
-          <BirdList array={birdsData[2]} />
+          <BirdList
+            page={page}
+            random={random}
+            isSelectedBird={isSelectedBird}
+            isCorrectBird={isCorrectBird}
+            onItemSelected={onItemSelected}
+            isNextPage={isNextPage}
+          />
         </div>
         <div className="bird-description">
-          <DescriptionBird />
+          <DescriptionBird
+            page={page}
+            // random={random}
+            id={id}
+            isSelectedBird={isSelectedBird}
+          />
         </div>
-        <button className="btn">Next level</button>
+        <button className="btn" onClick={nextPage}>
+          Next level
+        </button>
       </div>
     );
   }

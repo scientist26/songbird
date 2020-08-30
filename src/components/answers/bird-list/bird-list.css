@@ -37,3 +37,11 @@
     transition: .1s;
     background-color: #444;
 }
+
+.error {
+  background-color: rgb(255, 1, 1);
+}
+
+.win {
+  background-color: rgb(39, 255, 1);
+}
